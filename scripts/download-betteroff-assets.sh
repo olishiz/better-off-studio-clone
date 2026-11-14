@@ -4,7 +4,7 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.."
 OUT=public/sites/betteroff
-mkdir -p "$OUT/img" "$OUT/video"
+mkdir -p "$OUT/img" "$OUT/video" "$OUT/fonts"
 
 DATO=https://www.datocms-assets.com/106915
 
@@ -14,6 +14,12 @@ fetch() {
   curl -sSfL "$url" -o "$OUT/$name"
   echo "downloaded $name"
 }
+
+fetch logo.svg https://betteroff.studio/logo.svg
+fetch fonts/founders-grotesk-x.woff2 https://betteroff.studio/_nuxt/fonts/founders-grotesk-x.cd2d353.woff2
+fetch fonts/PPNeueMontreal-Bold.woff2 https://betteroff.studio/_nuxt/fonts/PPNeueMontreal-Bold.2b1a179.woff2
+fetch fonts/PPNeueMontreal-Medium.woff2 https://betteroff.studio/_nuxt/fonts/PPNeueMontreal-Medium.88ee7c9.woff2
+fetch fonts/PPNeueMontreal-Book.woff2 https://betteroff.studio/_nuxt/fonts/PPNeueMontreal-Book.525bb33.woff2
 
 # 800px loops (marquee + inline word images)
 for f in \
