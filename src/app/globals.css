@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "pp", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, monospace;
-  --font-display: "founders", "Impact", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-wordmark: "League Spartan", "Inter", sans-serif;
   --font-heading: var(--font-sans);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -119,53 +119,39 @@
 }
 
 /*
- * Better Off Studio clone.
- * The source sizes everything in rem against a fluid root: 1rem = 10px at a
+ * The Shiz, laid out on the Better Off Studio clone.
+ * Everything is sized in rem against a fluid root: 1rem = 10px at a
  * 1500px-wide desktop and at a 390px-wide phone, capped at 16px. Spacing
- * utilities follow the source's convention where `pt-20` means 2rem.
+ * utilities follow the convention where `pt-20` means 2rem.
  */
 @font-face {
-  font-family: "founders";
+  font-family: "Inter";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url("/sites/betteroff/fonts/founders-grotesk-x.woff2") format("woff2");
+  src: url("/sites/the-shiz/fonts/inter-latin-var.woff2") format("woff2");
 }
 @font-face {
-  font-family: "pp";
+  font-family: "League Spartan";
   font-style: normal;
-  font-weight: 700;
+  font-weight: 100 900;
   font-display: swap;
-  src: url("/sites/betteroff/fonts/PPNeueMontreal-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: "pp";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("/sites/betteroff/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: "pp";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("/sites/betteroff/fonts/PPNeueMontreal-Book.woff2") format("woff2");
+  src: url("/sites/the-shiz/fonts/league-spartan-latin-var.woff2") format("woff2");
 }
 
 @theme {
   --spacing: 0.1rem;
   --breakpoint-s: 650px;
 
-  --color-black: #1e1e1e;
-  --color-white: #fff;
-  --color-white-off: #e5e7df;
-  --color-gray: #dce4e5;
-  --color-gray-3: #fafafa;
-  --color-gray-4: #cdcfc7;
-  --color-gray-text: #949690;
-  --color-purple: #cfa9ed;
-  --color-yellow: #e0f07d;
+  --color-black: #26251f;
+  --color-white: #f7f7f4;
+  --color-paper: #ffffff;
+  --color-white-off: #e6e5e0;
+  --color-gray: #cdcdc9;
+  --color-gray-3: #f2f1ed;
+  --color-gray-4: #cdcdc9;
+  --color-gray-text: #6b6b66;
+  --color-panel-well: #ebeae5;
 
   --ease-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -194,10 +180,11 @@
   body {
     background-color: var(--color-white-off);
     color: var(--color-black);
-    font-family: "pp", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
     font-size: 2rem;
-    font-weight: 500;
-    line-height: 1.35;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
     overflow-x: hidden;
   }
   ::selection {
@@ -237,7 +224,8 @@
   .h2 {
     font-size: 3.35rem;
     font-weight: 500;
-    line-height: 1.07;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
   }
   .pl {
     font-size: 2rem;
@@ -252,11 +240,12 @@
   }
 
   .big-word {
+    font-family: var(--font-display), "Impact", sans-serif;
     line-height: 1;
     text-transform: uppercase;
-    font-weight: 700;
-    margin-top: -0.22em;
-    margin-bottom: -0.1175em;
+    font-weight: 400;
+    margin-top: -0.06em;
+    margin-bottom: -0.1em;
   }
 
   .stack {
@@ -413,7 +402,7 @@
     transform: translateX(2.6rem);
   }
 
-  /* Pricing CTA: a yellow panel wipes up from the bottom on hover */
+  /* Primary CTA: a light panel wipes up from the bottom on hover */
   .btn-mask {
     clip-path: inset(100% 2rem 0 round 0.7rem 0.7rem 0 0);
     transition: clip-path 0.55s var(--ease-in-out-circ);
@@ -472,12 +461,12 @@
   }
   @media (min-width: 650px) {
     .logo-tab {
-      aspect-ratio: 1.6;
+      aspect-ratio: 2.6;
     }
   }
 
   .text-image {
-    aspect-ratio: 1.4;
+    aspect-ratio: 1.6;
     height: 0.63em;
     margin-top: 0.005em;
   }

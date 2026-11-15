@@ -1,16 +1,15 @@
-import { Benefits } from "@/components/sites/betteroff/Benefits";
-import { CookieBanner } from "@/components/sites/betteroff/CookieBanner";
-import { CultureSlideshow } from "@/components/sites/betteroff/CultureSlideshow";
-import { Faq } from "@/components/sites/betteroff/Faq";
-import { Feed } from "@/components/sites/betteroff/Feed";
-import { Footer } from "@/components/sites/betteroff/Footer";
-import { Header } from "@/components/sites/betteroff/Header";
-import { Hero } from "@/components/sites/betteroff/Hero";
-import { Intro } from "@/components/sites/betteroff/Intro";
-import { Plans } from "@/components/sites/betteroff/Plans";
-import { Projects } from "@/components/sites/betteroff/Projects";
-import { Services } from "@/components/sites/betteroff/Services";
-import { Testimonials } from "@/components/sites/betteroff/Testimonials";
+import { Approach } from "@/components/sites/the-shiz/Approach";
+import { Contact } from "@/components/sites/the-shiz/Contact";
+import { Feed } from "@/components/sites/the-shiz/Feed";
+import { Footer } from "@/components/sites/the-shiz/Footer";
+import { Header } from "@/components/sites/the-shiz/Header";
+import { Hero } from "@/components/sites/the-shiz/Hero";
+import { Intro } from "@/components/sites/the-shiz/Intro";
+import { Projects } from "@/components/sites/the-shiz/Projects";
+import { Services } from "@/components/sites/the-shiz/Services";
+import { Showreel } from "@/components/sites/the-shiz/Showreel";
+import { Testimonials } from "@/components/sites/the-shiz/Testimonials";
+import { WhatsAppFloat } from "@/components/sites/the-shiz/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -22,14 +21,13 @@ export default function Home() {
         <Projects />
         <Services />
         <Testimonials />
-        <CultureSlideshow />
-        <Benefits />
-        <Plans />
-        <Faq />
+        <Showreel />
+        <Approach />
+        <Contact />
         <Feed />
       </main>
       <Footer />
-      <CookieBanner />
+      <WhatsAppFloat />
     </div>
   );
 }
